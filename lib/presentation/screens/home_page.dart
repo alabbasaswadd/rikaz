@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rikaz/core/constants/colors.dart';
+import 'package:rikaz/presentation/screens/display_data.dart';
 import 'package:rikaz/presentation/screens/game_page.dart';
+import 'package:rikaz/presentation/screens/insert_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.index});
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     tabController.addListener(() {
       if (!tabController.indexIsChanging) {
         setState(() {
-          refreshKey++;
+          refreshKey++; 
         });
       }
     });
@@ -65,8 +67,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         controller: tabController,
         children: [
           buildTabContent(GameScreen(), "game"),
-          buildTabContent(const Text("data"), "insert"),
-          buildTabContent(const Text("data"), "display"),
+          buildTabContent(const InsertData(), "insert"),
+          buildTabContent(const DisplayData(), "display"),
         ],
       ),
     );

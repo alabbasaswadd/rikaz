@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:rikaz/business_logic/cubit/data_cubit.dart';
 import 'package:rikaz/core/constants/colors.dart';
 import 'package:rikaz/core/helper/sqldb.dart';
 import 'package:rikaz/core/widgets/my_card.dart';
 import 'package:rikaz/core/widgets/my_indicator.dart';
+import 'package:rikaz/presentation/screens/edit_data.dart';
 
 class DisplayData extends StatefulWidget {
   const DisplayData({super.key});
@@ -55,7 +57,7 @@ class _DisplayDataState extends State<DisplayData> {
                     });
                   },
                   onTap: () {
-                    // Get.toNamed(EditData.id, arguments: student);
+                    Get.toNamed(EditData.id, arguments: student);
                   },
                   child: Stack(
                     children: [
