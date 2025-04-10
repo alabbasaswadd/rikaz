@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:rikaz/business_logic/cubit/data_cubit.dart';
 
 import 'package:rikaz/business_logic/cubit/game_cubit.dart';
 import 'package:rikaz/presentation/screens/splash.dart';
 import 'package:rikaz/routes.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => GameCubit()),
+        BlocProvider(create: (context) => DataCubit()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
